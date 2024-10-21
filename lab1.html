@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lab1</title>
+</head>
+<style>
+    html,body{
+        margin: 0;
+        padding: 0;
+    }
+    .container{
+        min-heighth: 500px;
+        width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .container > div {
+        font-weight: bolder;
+        text-align: center;
+        border: solid gray 1px; 
+    }
+    .header{
+        height: 50px;
+    }
+    .nav{
+        height: 50px;
+    }
+    /*.
+        --C1: Cách này sẽ bị cái khi thu nhỏ ddoojo phóng lại 50% trở xuống sẽ bị nhảy cột
+        content{
+        height: auto;
+        min-height: 300px;
+
+    }
+    .left{
+        float: left;
+        width: calc(30% - 2px);
+        border: solid 1px gray;
+        height: 298px;
+    }
+    .right{
+        float: right;
+        width: calc(70% - 2px);
+        border: solid 1px gray;
+        height: 298px;
+    }*/
+
+    /*C2 : Cách này thì làm nó sẽ chính xác theo biểu mẫu 100% vòi dùng Flexbox*/
+    .content {
+        display: flex; /* Sử dụng Flexbox */
+        min-height: 300px; /* Chiều cao tối thiểu */
+    }
+    .left {
+        flex: 0 0 30%; /* Chiều rộng 30% */
+        border: solid 1px gray;
+    }
+    .right {
+        flex: 0 0 70%; /* Chiều rộng 70% */
+        border: solid 1px gray;
+    }
+    .footer{
+        height: 80px;
+    }
+
+</style>
+<body>
+<div class="container">
+    <div class="header">HEADER</div>
+    <div class="nav">NAV</div>
+    <div class="content">
+        <div class="left">Method</div>
+        <div class="right">Content</div>
+    </div>
+    <div class="footer">FOOTER</div>
+</div>
+</body>
+</html>
